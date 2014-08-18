@@ -29,14 +29,17 @@ def main():
 
         screen.fill(black)
 
-        dt = str(datetime.datetime.today())
+        now = datetime.datetime.today()
+        delta = datetime.timedelta(seconds = 2)
+
+        dt = str(now - delta)
         time = dt[11:19]
         
         fontimg = font.render(time, 1, white)
         screen.blit(fontimg, (50,80))
 
         pygame.display.update() 
-        pygame.time.delay(500)
+        pygame.time.delay(1000)
         
 if __name__ == '__main__': 
     main()    

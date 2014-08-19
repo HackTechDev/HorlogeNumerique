@@ -27,6 +27,9 @@ def main():
 
     delta = datetime.timedelta(seconds = 0)
 
+
+    alarm1 = "2014-08-19 22:13:00"
+
     while 1:
 
         for event in pygame.event.get():
@@ -37,6 +40,7 @@ def main():
 
         now = datetime.datetime.today()
         secPython = float(str(now)[17:26])
+
 
         dt = str(now - delta)
         time = dt[11:19]
@@ -51,6 +55,9 @@ def main():
         out=Popen(commandeDate,stdout=PIPE)
         (secUnix,serr)=out.communicate()
         delta = datetime.timedelta(seconds = int(float(secUnix) - float(secPython)))
+        if alarm1 == str(now)[0:19]:
+            print "Alarm"
+
 
 
 if __name__ == '__main__': 

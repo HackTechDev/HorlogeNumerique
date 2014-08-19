@@ -59,6 +59,8 @@ def main():
             print "Alarm"
 
 
+        if alarm1 == str(now)[0:19]:
+            print "Alarm"
 
 if __name__ == '__main__': 
     main()    
